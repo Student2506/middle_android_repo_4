@@ -33,9 +33,6 @@ class AppViewModel(
     ) {
         newsDatabase.getNewsDao().getNews()
     }.flow.cachedIn(viewModelScope)
-    // Допишите реализацию метода, используя класс Pager()
-    // Для реализации фабрики используйте newsDatabase
-    // Реализуйте NewsRemoteMediator() используя newsService и newsDatabase
 
     fun attachPagingItems(paging: LazyPagingItems<News>?) {
         pagingItems = paging

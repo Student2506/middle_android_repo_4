@@ -42,10 +42,6 @@ class WorkManagerServiceImp(
 
     private fun createConstraints(): Constraints =
         Constraints.Builder().setRequiredNetworkType(networkType = NetworkType.CONNECTED).build()
-//    {
-//        // Реализуйте метод, возвращающий Constraints
-//        // В условиях укажите необходимость наличия интернет соединения.
-//    }
 
     private fun createRequest(repeat: Long, delayed: Long): PeriodicWorkRequest {
         val networkConstraints = createConstraints()
@@ -58,11 +54,6 @@ class WorkManagerServiceImp(
         }
 
         return periodicWorkRequest.build()
-
-        // Допишите реализацию метода и верните WorkRequest на периодическую задачу для RefreshWorker
-        // Интервал запуска задачи (в минутах)  = repeat.
-        // Отсрочка запуска задачи в (секундах) = delayed.
-        // Не забудьте в билдере указать constraints.
     }
 
     override fun launchRefreshWork() {
